@@ -1,0 +1,11 @@
+---
+
+# the os packages
+
+packages:
+- ca-certificates
+- curl
+- python3
+- gnupg
+- lsb-release
+- language-pack-ru

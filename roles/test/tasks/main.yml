@@ -1,0 +1,18 @@
+---
+
+
+- name: check postgresql version
+  shell: sudo -u postgres /usr/lib/postgresql/8.4/bin/psql -c 'SELECT version();'
+  args:
+    warn: no
+  register: check0
+
+- debug: msg="{{ check0.stdout.split('\n') }}"
+
+
+- name: check postgresql service
+  become: yes
+  shell: systemctl status postgresql@8.4-main.service 
+  register: check1
+
+- debug: msg="{{ check1.stdout.split('\n') }}"

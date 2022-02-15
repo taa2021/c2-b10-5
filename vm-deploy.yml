@@ -1,0 +1,11 @@
+---
+- name: SF ansible tasks - deploy
+  hosts: all
+  become: true
+  vars:
+    postgresql_version: 8.4
+
+  roles:
+    - common
+    - postgresql
+    - test
